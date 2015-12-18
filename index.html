@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Twine by dmcclccam</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Twine</h1>
+        <h2>An open-source tool for telling interactive, nonlinear stories.</h2>
+        <a href="https://github.com/dmcclccam/Twine" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>
+<a id="twinejs" class="anchor" href="#twinejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>twinejs</h2>
+
+<p>by Chris Klimas, Leon Arnott, Daithi O Crualaoich, Ingrid Cheung, Thomas
+Michael Edwards, Micah Fitch, Juhana Leinonen, and Ross Smith</p>
+
+<h3>
+<a id="synopsis" class="anchor" href="#synopsis" aria-hidden="true"><span class="octicon octicon-link"></span></a>SYNOPSIS</h3>
+
+<p>This is a port of Twine to a local browser-based app. See
+<a href="http://twinery.org">twinery.org</a> for more info.</p>
+
+<p>The story formats in minified format under <code>storyformats/</code> exist in separate
+repositories:</p>
+
+<ul>
+<li><a href="https://bitbucket.org/_L_/harlowe">Harlowe</a></li>
+<li><a href="https://bitbucket.org/klembot/snowman-2">Snowman</a></li>
+<li><a href="https://bitbucket.org/klembot/paperthin">Paperthin</a></li>
+</ul>
+
+<h3>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>INSTALL</h3>
+
+<p>Run <code>npm install</code> at the top level of the directory to install all goodies.</p>
+
+<p>You'll need <a href="http://gruntjs.com">Grunt</a> to continue. Run <code>npm install -g grunt</code>
+(you will need to have administrator privileges to achieve this task).</p>
+
+<h3>
+<a id="building" class="anchor" href="#building" aria-hidden="true"><span class="octicon octicon-link"></span></a>BUILDING</h3>
+
+<p>Run <code>grunt</code> to perform a basic build under <code>build/standalone</code>; <code>grunt dev</code> will
+perform the same tasks whenever you make changes to the source code. <code>grunt nw</code>
+will create executable app versions of Twine from this directory and place them
+under <code>build/nwjs/</code>. <code>grunt build:cdn</code> will build a version of Twine that makes
+as much use of CDN resources as possible, and place it under <code>build/cdn</code>.</p>
+
+<p>To create downloadable versions of Twine, run <code>grunt package</code>. These will be
+placed in the <code>dist/</code> directory. An additional file named <code>2.json</code> is created
+under <code>dist/</code>. This contains information relevant to the autoupdater process, and
+is currently posted to <a href="http://twinery.org/latestversion/2.json">http://twinery.org/latestversion/2.json</a>.</p>
+
+<p>In order to build Windows apps on OS X or Linux, you will need to have
+<a href="https://www.winehq.org/">Wine</a> and <a href="http://nsis.sourceforge.net/">makensis</a> installed.</p>
+
+<h3>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>TESTING</h3>
+
+<p>Run <code>grunt test</code> to run through Selenium-based tests (for now, these only run on
+Firefox). To quit a test run as soon as any error is encountered, run <code>grunt
+test --bail</code>. To run a subset of tests, run <code>grunt test --grep=mysearch</code>. Only
+tests whose name match the argument you pass will be run.</p>
+
+<h3>
+<a id="localization" class="anchor" href="#localization" aria-hidden="true"><span class="octicon octicon-link"></span></a>LOCALIZATION</h3>
+
+<p>Would you like to help localize Twine for another language? Awesome! You don't
+need to know JavaScript to do so. Here's how it works:</p>
+
+<ol>
+<li><p>Download
+<a href="https://bitbucket.org/klembot/twinejs/raw/4b64592fd47dd6678d9d0ebb0f07067f1bfaeabb/locale/po/template.pot">template.pot</a>
+from the repository.</p></li>
+<li><p>Use a translation application like <a href="http://poedit.net/">Poedit</a> to create a
+.po file with the source text translated. If you are using Poedit, get started
+by choosing <strong>New from POT/PO File</strong> from the <strong>File</strong> menu. Make sure to name
+your po file according to the <a href="https://en.wikipedia.org/wiki/IETF_language_tag">IETF locale naming
+convention</a> -- Poedit can help
+suggest that as well. For example, a generic French translation should be named
+<code>fr.po</code>, while an Australian English one would be named <code>en-au.po</code>.</p></li>
+<li><p>Finally, two other things are needed: an SVG-formatted image of the flag
+that should be associated with your language, and what native speakers call the
+language you are localizing to (e.g. Français for French speakers).
+<a href="https://commons.wikimedia.org/wiki/Category:SVG_flags_by_country">Wikimedia
+Commons</a> is
+your best bet for nice-looking SVG flags. Obviously, whatever image you provide
+must either be in the public domain or otherwise OK to use in Twine without any
+compensation.</p></li>
+<li><p>If you're comfortable using Mercurial, then you can open a pull request to
+have your localization added. Please place it in the <code>src/locale/po</code> directory. If
+you aren't, you can instead open a bug tracker issue and attach your PO file,
+flag image, and language name and we'll take it from there.</p></li>
+</ol>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/dmcclccam/Twine/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/dmcclccam/Twine/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/dmcclccam/Twine"></a> is maintained by <a href="https://github.com/dmcclccam">dmcclccam</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
