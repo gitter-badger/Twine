@@ -1,6 +1,8 @@
 twinejs
 -------
 
+[![Join the chat at https://gitter.im/dmcclccam/Twine](https://badges.gitter.im/dmcclccam/Twine.svg)](https://gitter.im/dmcclccam/Twine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 by Chris Klimas, Leon Arnott, Daithi O Crualaoich, Ingrid Cheung, Thomas
 Michael Edwards, Micah Fitch, Juhana Leinonen, and Ross Smith
 
